@@ -108,8 +108,13 @@
         },
         methods: {
             getData() {
-                var uri = this.$apiUrl + '/user'
-                this.$http.get(uri).then(response => {
+                var config = {
+                    headers: {
+                        Authorization: 'Bearer ' +localStorage.getItem('token')
+                    }
+                }
+                var uri = this.$apiUrl + '/User'
+                this.$http.get(uri,config).then(response => {
                     this.users = response.data.message
                 })
             },

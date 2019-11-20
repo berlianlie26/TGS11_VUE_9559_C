@@ -21,12 +21,11 @@
             </v-list-item>
 
             <v-divider></v-divider>
-            <v-list>
-                <v-list-item 
+            <v-list 
                 v-for="item in items" 
                 :key="item.title"
-                link
-                >
+                link>
+                <v-list-item :to="item.path">
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
@@ -77,7 +76,13 @@
                 drawer: null,
                 items: [
                 {
-                    title: 'branches Controller', icon: 'mdi-human-male' }, 
+                    title: 'Branches Controller', icon: 'mdi-human-male', path: '/branches' }, 
+
+                {
+                    title: 'User Controller', icon: 'mdi-human-male', path: '/user' }, 
+
+                {
+                    title: 'Login', icon: 'mdi-human-male', path: '/' }, 
                 ],
                 
             }
